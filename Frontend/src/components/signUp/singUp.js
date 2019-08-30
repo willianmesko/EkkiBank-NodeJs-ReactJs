@@ -29,7 +29,7 @@ export default function SignUp(history) {
         await api.post("/user", { name, cpf, cellphone, password });
         history.props.push('/');
       } catch (err) {
-        setError("Ocorreu um erro ao registrar sua conta.")
+        setError("Use um CPF válido com 11 dígitos")
       }
     }
   };
