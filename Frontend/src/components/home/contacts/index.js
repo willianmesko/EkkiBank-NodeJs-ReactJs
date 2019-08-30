@@ -55,10 +55,10 @@ export default function Contacts({setTransaction, transaction}) {
           } else {
               try {
                 const response = await api.post('/contacts', { name, cpf, account_number: accountNumber });
-               ;
+                  setError(''); 
                   setContact(response.data)
             } catch (error) {
-                 setError("O CPF exige 11 dígitos");
+                 setError("Use um CPF válido com 11 dígitos");
               }
             }
         }
