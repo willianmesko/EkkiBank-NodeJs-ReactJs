@@ -1,0 +1,9 @@
+{
+  "name": "EkkiBank",
+  "short_name": "Bank",
+  "theme_color": "#1d5988",
+  "background_color": "#2196f3",
+  "display": "browser",
+  "scope": "http://localhost:3000/",
+  "start_url": "http://localhost:3000/"
+}
