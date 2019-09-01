@@ -90,7 +90,7 @@ export default function Contacts({setTransaction, transaction}) {
                    <TransactionModal setTransaction={setTransaction} contact={contact}/>
                  </IconButton>
                   <IconButton  className={classes.button} aria-label="edit">
-                      <EditContactModal setTransaction={setTransaction} contact={contact} />
+                      <EditContactModal setContact={setContact} contact={contact} />
                  </IconButton>
                   <IconButton onClick={() => handleDeleteContact(contact.id)} className={classes.button} aria-label="delete">
                          <DeleteIcon />
