@@ -50,7 +50,7 @@ export default function Trasactions({transaction, contact}) {
                   <TableCell>{moment(transaction.created_at.split("T")[0]).format("DD/MM/YYYY")}</TableCell>
                   <TableCell>{transaction.contact_name.toUpperCase()}</TableCell>
                   <TableCell>{intlMonetary.format(transaction.value)}</TableCell>
-                  <TableCell>Tranferência</TableCell>
+                  <TableCell>Transferência</TableCell>
 
                 </TableRow>
               ))}
