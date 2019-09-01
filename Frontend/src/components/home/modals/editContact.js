@@ -27,7 +27,6 @@ export default function EditContactModal({contact, setContact}) {
   const [account_number, setAccountNumber] = useState(contact.account_number);
   const [error, setError] = useState('');
 
-  intlMonetary.format(contact.balance)
   const handleOpen = () => {
     setOpen(true);
 
@@ -41,8 +40,10 @@ export default function EditContactModal({contact, setContact}) {
     try {
         e.preventDefault();
         const response = await api.put(`contact/${contact.id}`, {cpf, name, account_number});
-        setContact(response.data)
         setOpen(false);
+      
+        setContact(response.data)
+
 
    } catch (error) {
         setError("Use um CPF válido com 11 dígitos")
@@ -115,9 +116,9 @@ export default function EditContactModal({contact, setContact}) {
                 id="outlined-full-width"
                 label="SALDO R$"
                 style={{ margin: 8 }}
-                type="number"
+                type="text"
                 disabled
-                value={contact.balance}
+                value={intlMonetary.format(contact.balance)}
                 fullWidth
                 margin="normal"
                 variant="outlined"
