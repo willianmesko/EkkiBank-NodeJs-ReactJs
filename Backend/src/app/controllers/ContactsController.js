@@ -86,7 +86,8 @@ class ContactsController {
             {name, cpf, account_number},
             {where: {contact_id: contact.id}}
             );
-
+        
+        return res.json(contact);
     }
 
 }
