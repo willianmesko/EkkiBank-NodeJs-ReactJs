@@ -29,8 +29,9 @@ export default function TransactionModal({contact, setTransaction}) {
 
   async function handleTransaction(e) {
     e.preventDefault();
-    if(!deposit) {
-
+    if(!deposit || deposit <= 0) {
+      setStatus(1);
+      setMessage("Valor minímo de R$ 1,00");
     } else {
         try {
           const response =  await api.post(`transaction/${contact.id}`, {deposit});
