@@ -68,8 +68,9 @@ export const logTransaction = async (user_id, contact_id, contact_name, value) =
 export const validLastDeposit = async (user, contact_id, value) => {
     const existTransactionEqual = await Transaction.findOne({
         where:{ user_id: user.id,
-                contact_id,
-                value,
+                 contact_id,
+                 value,
+                 canceled_at: {[Op.not]: 1},
                  created_at : {
                     [Op.between] : [ new Date(Date.now() - (2 * 60 * 1000)), new Date(Date.now())]
                     }
