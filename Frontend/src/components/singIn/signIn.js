@@ -22,7 +22,7 @@ export default function Sign( history ) {
   async function handleSignIn(e)  {
     e.preventDefault();
     if (!cpf || !password) {
-      setError("Preencha o e-mail e senha para continuar!");
+      setError("Preencha o cpf e senha para continuar!");
     } else {
       try {
           const response = await api.post('/sessions', { cpf, password });
